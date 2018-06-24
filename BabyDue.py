@@ -10,7 +10,14 @@ weeks = data.iloc[:,0]/7
 frac = data.iloc[:,2] / np.sum(data.iloc[:,2])
 
 # Plot
+plt.figure(1)
 plt.plot(weeks, 100.0*frac, "o-")
+plt.xlabel("Weeks")
+plt.ylabel("Percentage")
+
+# Cumulative
+plt.figure(2)
+plt.plot(weeks, np.cumsum(100.0*frac), "o-")
 plt.xlabel("Weeks")
 plt.ylabel("Percentage")
 plt.show()
